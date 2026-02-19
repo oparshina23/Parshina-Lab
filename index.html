@@ -268,6 +268,18 @@
     }
     .team-card .role { font-size: 0.82rem; color: #666; line-height: 1.5; }
     .team-card .interest { font-size: 0.8rem; color: var(--teal); margin-top: 0.3rem; font-style: italic; }
+    /* MOBILE FIX */
+@media (max-width: 650px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+
+  .team-card {
+    width: min(320px, 92vw);
+    margin: 0 auto;
+  }
+}
 
     /* ── PUBLICATIONS ── */
     #publications { background: var(--cream); }
@@ -755,4 +767,5 @@ Middlebury Faculty Profile
 
 
 <script data-c
+
 
