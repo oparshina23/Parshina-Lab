@@ -28,7 +28,7 @@
       overflow-x: hidden;
     }
 
-    /* ── NAV ── */
+    /* -- NAV -- */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
@@ -61,7 +61,7 @@
     .nav-links a:hover::after { transform: scaleX(1); }
     .nav-links a:hover { color: var(--coral); }
 
-    /* ── HERO ── */
+    /* -- HERO -- */
     #home {
       min-height: 100vh;
       display: grid;
@@ -166,7 +166,7 @@
     .wc-word:nth-child(9)  { top: 85%; left: 25%; font-size: 1.4rem; color: var(--teal);     animation-delay: 2.6s; }
     .wc-word:nth-child(10) { top: 10%; left: 60%; font-size: 0.9rem; color: var(--lavender); animation-delay: 2.9s; }
 
-    /* ── SECTION BASE ── */
+    /* -- SECTION BASE -- */
     section { padding: 6rem 4rem; }
     .section-label {
       font-size: 0.75rem; font-weight: 500; letter-spacing: 0.18em;
@@ -182,7 +182,7 @@
       line-height: 1.1; margin-bottom: 1.5rem;
     }
 
-    /* ── RESEARCH ── */
+    /* -- RESEARCH -- */
     #research { background: var(--ink); color: var(--cream); }
     #research .section-label { color: var(--gold); }
     #research .section-label::before { background: var(--gold); }
@@ -216,7 +216,7 @@
     }
     .research-card p { font-size: 0.9rem; line-height: 1.75; opacity: 0.72; }
 
-     /* ---- TEAM ---- */
+    /* ---- TEAM ---- */
     #team { background: #fff; }
     .team-intro { max-width: 640px; line-height: 1.8; color: #4a3f2f; margin-bottom: 2.5rem; font-size: 1.02rem; }
 
@@ -320,7 +320,8 @@
       .lab-gallery { grid-template-columns: 1fr; grid-auto-rows: 220px; }
       .lab-gallery figure.wide, .lab-gallery figure.tall { grid-column: auto; grid-row: auto; }
     }
-    /* ── PUBLICATIONS ── */
+
+    /* -- PUBLICATIONS -- */
     #publications { background: var(--cream); }
     .pub-list { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.2rem; }
     .pub-item {
@@ -342,7 +343,7 @@
     .pub-authors { font-size: 0.85rem; color: #555; }
     .pub-journal { font-size: 0.85rem; color: var(--teal); font-style: italic; }
 
-    /* ── PRESENTATIONS ── */
+    /* -- PRESENTATIONS -- */
     #presentations { background: var(--cream); }
     .pres-list { margin-top: 2rem; display: flex; flex-direction: column; gap: 0; }
     .pres-year-group { margin-bottom: 2rem; }
@@ -368,7 +369,7 @@
     .pres-type.invited { background: var(--coral); color: #fff; }
     .pres-meta { font-size: 0.82rem; color: #666; grid-column: 1; margin-top: 0.1rem; }
 
-    /* ── Join the lab ── */
+    /* -- Join the lab -- */
     #volunteer {
       background: linear-gradient(135deg, var(--coral) 0%, var(--pink) 100%);
       color: #fff; text-align: center;
@@ -380,7 +381,7 @@
     .btn-white { background: #fff; color: var(--coral); border-color: #fff; font-weight: 600; }
     .btn-white:hover { box-shadow: 4px 4px 0 rgba(0,0,0,0.2); }
 
-    /* ── CONTACT ── */
+    /* -- CONTACT -- */
     #contact { background: #fff; }
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 2rem; }
     .contact-info p { line-height: 2; font-size: 1rem; color: #333; }
@@ -399,7 +400,7 @@
     .contact-map h3 { font-family: 'Fraunces', serif; font-size: 1.3rem; }
     .contact-map p { color: #555; font-size: 0.9rem; line-height: 1.6; }
 
-    /* ── FOOTER ── */
+    /* -- FOOTER -- */
     footer {
       background: var(--ink); color: var(--cream);
       padding: 2rem 4rem;
@@ -408,14 +409,14 @@
     }
     footer a { color: var(--coral); text-decoration: none; }
 
-    /* ── ANIMATIONS ── */
+    /* -- ANIMATIONS -- */
     .reveal {
       opacity: 1; transform: translateY(0);
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* ── RESPONSIVE ── */
+    /* -- RESPONSIVE -- */
     @media (max-width: 900px) {
       nav { padding: 1rem 2rem; }
       .nav-links { gap: 1.2rem; }
@@ -425,13 +426,95 @@
       .contact-grid { grid-template-columns: 1fr; }
       footer { flex-direction: column; gap: 0.5rem; text-align: center; }
     }
+
+    /* ---- MIDDLEBURY COLOR THEME (overrides) ---- */
+    :root {
+      --midd-blue: #09357A;
+      --midd-navy: #061E45;
+      --cream: #F4F6FA;
+      --ink: #0B1F3A;
+      --coral: #09357A;
+      --teal: #2F6FB0;
+      --gold: #9CC3E6;
+      --lavender: #5B7FB8;
+      --sage: #4F8A9E;
+      --pink: #2F6FB0;
+    }
+
+    /* Nav with Middlebury logo */
+    nav { background: rgba(255,255,255,0.94); border-bottom: 3px solid var(--midd-blue); }
+    .nav-brand { display: flex; align-items: center; gap: 0.9rem; text-decoration: none; }
+    .nav-midd-logo { height: 48px; width: auto; display: block; }
+    .nav-divider { width: 1.5px; height: 36px; background: rgba(9,53,122,0.3); }
+    .nav-brand .nav-logo { color: var(--midd-blue); }
+    .nav-logo span { color: var(--teal); }
+    .nav-links a:hover { color: var(--midd-blue); }
+
+    /* Hero */
+    .shape-1 { background: rgba(9,53,122,0.10); }
+    .shape-2 { background: rgba(47,111,176,0.12); }
+    .shape-3 { background: rgba(156,195,230,0.30); }
+    .shape-4 { background: rgba(9,53,122,0.07); }
+    .wc-word:nth-child(5) { color: var(--teal); }
+    .hero-desc, .team-intro, .pi-bio { color: #3A4A60; }
+    .btn { border-color: var(--midd-blue); }
+    .btn:hover { box-shadow: 4px 4px 0 var(--midd-navy); }
+    .btn-outline { color: var(--midd-blue); }
+
+    /* Research section (dark navy) */
+    #research { background: var(--midd-navy); }
+    .research-card:nth-child(1)::before { background: #9CC3E6; }
+    .research-card:nth-child(2)::before { background: #2F6FB0; }
+    .research-card:nth-child(3)::before { background: #FFFFFF; }
+    .research-card:nth-child(4)::before { background: #5B7FB8; }
+
+    /* Team */
+    .pi-card { border-color: var(--midd-blue); box-shadow: 6px 6px 0 var(--midd-blue); }
+    .pi-links a { color: var(--midd-blue); border-color: var(--midd-blue); }
+    .pi-links a:hover { background: var(--midd-blue); color: #fff; }
+    .ra-card:nth-child(5n+4) .ra-avatar { background: #1B4F8F; }
+    .ra-badge { background: rgba(9,53,122,0.10); color: var(--midd-blue); }
+
+    /* Publications and presentations */
+    .pub-item { border-left-color: #9CC3E6; }
+    .pub-item:hover { border-color: var(--midd-blue); }
+    .pub-year { color: var(--teal); }
+    .pres-year-heading { border-bottom-color: var(--midd-blue); }
+
+    /* Join us */
+    #volunteer { background: linear-gradient(135deg, var(--midd-navy) 0%, var(--midd-blue) 55%, #2F6FB0 100%); }
+    .btn-white { color: var(--midd-blue); }
+
+    /* Contact */
+    .contact-map {
+      background: linear-gradient(135deg, rgba(9,53,122,0.06), rgba(47,111,176,0.14));
+      border-color: rgba(9,53,122,0.15);
+    }
+
+    /* Footer with white logo */
+    footer { background: var(--midd-navy); }
+    footer a { color: var(--gold); }
+    .footer-brand { display: flex; align-items: center; gap: 1rem; }
+    .footer-logo { height: 44px; width: auto; filter: brightness(0) invert(1); }
+
+    @media (max-width: 900px) {
+      .nav-midd-logo { height: 32px; }
+      .footer-brand { flex-direction: column; }
+    }
+    @media (max-width: 600px) {
+      .nav-divider, .nav-brand .nav-logo { display: none; }
+    }
   </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <a href="#home" class="nav-logo">L&amp;<span>C</span> Lab</a>
+  <a href="#home" class="nav-brand">
+    <img src="images/midd-logo.png" alt="Middlebury College" class="nav-midd-logo">
+    <span class="nav-divider"></span>
+    <span class="nav-logo">L&amp;<span>C</span> Lab</span>
+  </a>
   <ul class="nav-links">
     <li><a href="#home">Home</a></li>
     <li><a href="#research">Research</a></li>
@@ -456,7 +539,7 @@
     <div class="hero-eyebrow">Middlebury College</div>
     <h1>Language &amp; <em>Cognition</em> Lab</h1>
     <p class="hero-desc">
-      We explore the intersection of language and mind — how humans acquire, process, and produce language, and what this reveals about the nature of human cognition.
+      We explore the intersection of language and mind &#8212; how humans acquire, process, and produce language, and what this reveals about the nature of human cognition.
     </p>
     <div class="hero-ctas">
       <a href="#research" class="btn btn-primary">Our Research</a>
@@ -484,26 +567,26 @@
   <div class="section-label">What We Study</div>
   <h2>Research Areas</h2>
   <p class="research-intro">
-    Our lab uses eye-tracking and behavioral methods to study how people read and process language — across languages, populations, and levels of proficiency.
+    Our lab uses eye-tracking and behavioral methods to study how people read and process language &#8212; across languages, populations, and levels of proficiency.
   </p>
   <div class="research-grid reveal">
     <div class="research-card">
-      <div class="research-card-icon">👁️</div>
+      <div class="research-card-icon">&#128065;&#65039;</div>
       <h3>Eye Movements & Reading</h3>
       <p>We use eye-tracking to study the real-time dynamics of reading across languages. By recording how eyes move in reading, we examine how linguistic information interact with attention during sentence processing. This approach allows us to identify subtle differences in processing efficiency, lexical access, and integration across reader populations and language contexts.</p>
     </div>
     <div class="research-card">
-      <div class="research-card-icon">🌍</div>
+      <div class="research-card-icon">&#127757;</div>
       <h3>Bilingualism </h3>
-      <p>How do bilinguals manage two languages while reading? We study language control, predictive processing, and even how bilinguals process jokes — with implications for both theory and language pedagogy.</p>
+      <p>How do bilinguals manage two languages while reading? We study language control, predictive processing, and even how bilinguals process jokes &#8212; with implications for both theory and language pedagogy.</p>
     </div>
     <div class="research-card">
-      <div class="research-card-icon">📖</div>
+      <div class="research-card-icon">&#128214;</div>
       <h3>Reading Development & Dyslexia</h3>
       <p>What distinguishes typical from atypical reading development? We examine global reading patterns and scanpaths in children at risk for dyslexia, and explore phonological deficits and their neural correlates.</p>
     </div>
     <div class="research-card">
-      <div class="research-card-icon">🔮</div>
+      <div class="research-card-icon">&#128302;</div>
       <h3> Heritage Languages </h3>
       <p> We study a special group of bilingual speakers, heritage speakers, individuals who grow up exposed to a minority language at home while living in a majority language environment. These speakers typically acquire two languages from early childhood, yet their linguistic experience differs in systematic ways from both monolingual speakers and late second language learners. </p>
     </div>
@@ -550,10 +633,16 @@
       <div class="ra-avatar">AM</div>
       <div class="ra-name">Amna Mohammed</div>
       <div class="ra-role">Research Assistant</div>
+      <span class="ra-badge">HHMI Scholar</span>
     </div>
     <div class="ra-card">
       <div class="ra-avatar">AT</div>
       <div class="ra-name">Aris Techasukij</div>
+      <div class="ra-role">Research Assistant</div>
+    </div>
+    <div class="ra-card">
+      <div class="ra-avatar">TA</div>
+      <div class="ra-name">Tess Armon</div>
       <div class="ra-role">Research Assistant</div>
     </div>
     <div class="ra-card">
@@ -570,7 +659,7 @@
       <div class="ra-avatar">MD</div>
       <div class="ra-name">Meghasha Dangal</div>
       <div class="ra-role">Research Assistant</div>
-      <span class="ra-badge">Senior Project</span>
+      <span class="ra-badge">Senior Thesis</span>
     </div>
   </div>
 
@@ -583,7 +672,12 @@
     <span>Nana Santos Almonte</span>
     <span>Katrina Schwarz</span>
     <span>Clara Bass</span>
+    <span>Islam Abushareah</span>
+    <span>Isabelle Cone</span>
+    <span>Seunghyun Lee</span>
+    <span>Maria Soto</span>
   </div>
+
   <!-- Photo gallery -->
   <h3 class="team-subhead">Lab Life</h3>
   <div class="lab-gallery reveal">
@@ -624,6 +718,7 @@
       <figcaption>Final lab meeting, AY 2025&ndash;26</figcaption>
     </figure>
   </div>
+</section>
 
 <!-- PUBLICATIONS -->
 <section id="publications">
@@ -759,6 +854,7 @@
 
   </div>
 </section>
+
 <!-- PRESENTATIONS -->
 <section id="presentations">
   <div class="section-label">Out in the World</div>
@@ -957,7 +1053,7 @@
   <p class="volunteer-desc">
    We are always looking for new members to join our research team! Students should be responsible, committed, attentive to detail, and of course genuinely curious:)
   </p>
-  <a href="https://forms.gle/a8nZyysZbBvbi2Ei6" target="_blank" class="btn btn-white">Sign Up via Google Form →</a>
+  <a href="https://forms.gle/a8nZyysZbBvbi2Ei6" target="_blank" class="btn btn-white">Sign Up via Google Form &#8594;</a>
   <p style="margin-top:1.5rem; font-size:0.85rem; opacity:0.7;">
   </p>
 </section>
@@ -969,14 +1065,14 @@
   <div class="contact-grid reveal">
     <div class="contact-info">
       <div class="contact-detail">
-        <div class="contact-icon">📍</div>
+        <div class="contact-icon">&#128205;</div>
         <div>
           <strong>Location</strong><br>
           <span style="color:#555;">Language & Cognition Lab<br>Department of Psychology<br>Middlebury College<br>Middlebury, Vermont 05753</span>
         </div>
       </div>
       <div class="contact-detail">
-        <div class="contact-icon">✉️</div>
+        <div class="contact-icon">&#9993;&#65039;</div>
         <div>
     <strong>Profile</strong><br>
 <a href="https://www.middlebury.edu/college/people/olga-parshina" target="_blank">
@@ -986,14 +1082,14 @@ Middlebury Faculty Profile
         </div>
       </div>
       <div class="contact-detail">
-        <div class="contact-icon">🌐</div>
+        <div class="contact-icon">&#127760;</div>
         <div>
           <strong>Affiliated Department</strong><br>
           <a href="https://www.middlebury.edu/college/academics/psychology" target="_blank">Psychology Department Middlebury College</a>
         </div>
       </div>
       <div class="contact-detail">
-        <div class="contact-icon">🎓</div>
+        <div class="contact-icon">&#127891;</div>
         <div>
           <strong>Interested in joining?</strong><br>
           <span style="color:#555;">We welcome motivated undergraduate researchers. Please fill out the google form above!</span>
@@ -1001,29 +1097,21 @@ Middlebury Faculty Profile
       </div>
     </div>
     <div class="contact-map">
-      <div class="pin">📌</div>
+      <div class="pin">&#128204;</div>
       <h3>Middlebury, Vermont</h3>
-      <p>Nestled in the Green Mountains, Middlebury College is one of New England's premier liberal arts institutions — home to world-class research in the humanities and sciences.</p>
+      <p>Nestled in the Green Mountains, Middlebury College is one of New England's premier liberal arts institutions &#8212; home to world-class research in the humanities and sciences.</p>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div>© 2025 Language & Cognition Lab · Middlebury College</div>
+  <div class="footer-brand">
+    <img src="images/midd-logo.png" alt="Middlebury College" class="footer-logo">
+    <span>Language &amp; Cognition Lab &middot; Department of Psychology</span>
+  </div>
+  <div>&copy; 2026 Language &amp; Cognition Lab</div>
 </footer>
 
-
-<script data-c
-
-
-
-
-
-
-
-
-
-
-
-
+</body>
+</html>
