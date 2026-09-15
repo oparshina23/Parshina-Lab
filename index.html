@@ -216,71 +216,110 @@
     }
     .research-card p { font-size: 0.9rem; line-height: 1.75; opacity: 0.72; }
 
-    /* ── TEAM ── */
+     /* ---- TEAM ---- */
     #team { background: #fff; }
-   .team-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 260px);
-  gap: 3rem;
-  margin-top: 2.5rem;
-  justify-content: center;
-}
-    .team-card { text-align: center; }
-    .team-avatar {
-      width: 140px; height: 140px;
-      border-radius: 50%;
-      margin: 0 auto 1rem;
+    .team-intro { max-width: 640px; line-height: 1.8; color: #4a3f2f; margin-bottom: 2.5rem; font-size: 1.02rem; }
+
+    /* PI card */
+    .pi-card {
+      display: grid; grid-template-columns: 200px 1fr; gap: 2.5rem; align-items: center;
+      background: var(--cream); border: 2px solid var(--ink); border-radius: 20px;
+      padding: 2.2rem; box-shadow: 6px 6px 0 var(--ink); margin-bottom: 3.5rem;
+    }
+    .pi-photo {
+      width: 200px; height: 200px; border-radius: 50%; overflow: hidden;
+      border: 4px solid #fff; box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .pi-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    .pi-tag {
+      display: inline-block; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; background: var(--coral); color: #fff;
+      padding: 0.25rem 0.7rem; border-radius: 999px; margin-bottom: 0.8rem;
+    }
+    .pi-card h3 { font-family: 'Fraunces', serif; font-size: 1.8rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .pi-title { color: var(--teal); font-weight: 500; font-size: 0.95rem; margin-bottom: 1rem; }
+    .pi-bio { font-size: 0.95rem; line-height: 1.75; color: #4a3f2f; margin-bottom: 1.2rem; }
+    .pi-links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+    .pi-links a {
+      font-size: 0.82rem; font-weight: 500; text-decoration: none; color: var(--ink);
+      border: 1.5px solid var(--ink); border-radius: 999px; padding: 0.4rem 1rem;
+      transition: background 0.2s, color 0.2s;
+    }
+    .pi-links a:hover { background: var(--ink); color: var(--cream); }
+
+    /* Subheadings */
+    .team-subhead {
+      font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 700;
+      margin: 0 0 1.2rem; display: flex; align-items: center; gap: 0.8rem;
+    }
+    .team-subhead::after { content: ''; flex: 1; height: 2px; background: rgba(0,0,0,0.1); }
+
+    /* Research assistant cards */
+    .ra-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1.2rem; margin-bottom: 3.5rem;
+    }
+    .ra-card {
+      background: var(--cream); border-radius: 16px; padding: 1.5rem 1rem; text-align: center;
+      border: 1px solid rgba(0,0,0,0.06); transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .ra-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .ra-avatar {
+      width: 64px; height: 64px; border-radius: 50%; margin: 0 auto 0.8rem;
       display: flex; align-items: center; justify-content: center;
-      font-family: 'Fraunces', serif;
-      font-size: 2rem; font-weight: 700; color: #fff;
-      position: relative;
-      transition: transform 0.3s;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+      font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.3rem; color: #fff;
     }
-    .team-avatar img {
-      width: 100%; height: 100%; object-fit: cover; object-position: center top;
-      border-radius: 50%;
+    .ra-card:nth-child(5n+1) .ra-avatar { background: var(--coral); }
+    .ra-card:nth-child(5n+2) .ra-avatar { background: var(--teal); }
+    .ra-card:nth-child(5n+3) .ra-avatar { background: var(--lavender); }
+    .ra-card:nth-child(5n+4) .ra-avatar { background: var(--gold); }
+    .ra-card:nth-child(5n+5) .ra-avatar { background: var(--sage); }
+    .ra-name { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.2rem; }
+    .ra-role { font-size: 0.78rem; color: #666; line-height: 1.4; }
+    .ra-badge {
+      display: inline-block; margin-top: 0.5rem; font-size: 0.65rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase; padding: 0.15rem 0.5rem;
+      border-radius: 4px; background: rgba(45,143,143,0.12); color: var(--teal);
     }
-    .team-card:hover .team-avatar { transform: scale(1.05) rotate(-2deg); }
-    .team-avatar::after {
-      content: ''; position: absolute; inset: -4px;
-      border-radius: 50%; border: 2px dashed rgba(0,0,0,0.15);
-    }
-    .lab-photos {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
-      margin-top: 3rem; border-radius: 16px; overflow: hidden;
-    }
-    .lab-photo {
-      border-radius: 16px; overflow: hidden; position: relative;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-    .lab-photo img { width: 100%; height: 280px; object-fit: cover; display: block; }
-    .lab-photo .photo-caption {
-      position: absolute; bottom: 0; left: 0; right: 0;
-      background: linear-gradient(transparent, rgba(0,0,0,0.6));
-      color: #fff; padding: 1rem; font-size: 0.85rem; font-style: italic;
-    }
-    @media (max-width: 600px) { .lab-photos { grid-template-columns: 1fr; } }
-    .team-card h3 {
-      font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.05rem;
-      margin-bottom: 0.2rem;
-    }
-    .team-card .role { font-size: 0.82rem; color: #666; line-height: 1.5; }
-    .team-card .interest { font-size: 0.8rem; color: var(--teal); margin-top: 0.3rem; font-style: italic; }
-    /* MOBILE FIX */
-@media (max-width: 650px) {
-  .team-grid {
-    grid-template-columns: 1fr;
-    justify-content: center;
-  }
 
-  .team-card {
-    width: min(320px, 92vw);
-    margin: 0 auto;
-  }
-}
+    /* Alumni */
+    .alumni-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 3.5rem; }
+    .alumni-list span {
+      font-size: 0.85rem; background: var(--cream); border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 999px; padding: 0.35rem 0.9rem;
+    }
 
+    /* Photo gallery */
+    .lab-gallery {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 220px; grid-auto-flow: dense; gap: 1rem;
+    }
+    .lab-gallery figure {
+      position: relative; margin: 0; border-radius: 14px; overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+    .lab-gallery figure.wide { grid-column: span 2; }
+    .lab-gallery figure.tall { grid-row: span 2; }
+    .lab-gallery figure.full { grid-column: 1 / -1; }
+    .lab-gallery img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
+    .lab-gallery figure:hover img { transform: scale(1.05); }
+    .lab-gallery figcaption {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 1.5rem 1rem 0.8rem; color: #fff; font-size: 0.82rem; font-style: italic;
+      background: linear-gradient(transparent, rgba(0,0,0,0.65));
+    }
+
+    @media (max-width: 900px) {
+      .pi-card { grid-template-columns: 1fr; text-align: center; justify-items: center; box-shadow: 4px 4px 0 var(--ink); }
+      .pi-photo { width: 160px; height: 160px; }
+      .pi-links { justify-content: center; }
+      .lab-gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 180px; }
+    }
+    @media (max-width: 600px) {
+      .pi-card { padding: 1.5rem; }
+      .lab-gallery { grid-template-columns: 1fr; grid-auto-rows: 220px; }
+      .lab-gallery figure.wide, .lab-gallery figure.tall { grid-column: auto; grid-row: auto; }
+    }
     /* ── PUBLICATIONS ── */
     #publications { background: var(--cream); }
     .pub-list { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.2rem; }
@@ -475,54 +514,116 @@
 <section id="team">
   <div class="section-label">Who We Are</div>
   <h2>Meet the Lab</h2>
-  <div class="team-grid reveal" style="justify-items:center;">
-    <div class="team-card">
-      <div class="team-avatar">
-        <img src="images/Parshina.jpg" alt="PI">      </div>
-      <h3>Dr. Olga Parshina</h3>
-      <div class="role">Principal Investigator<br>Visiting Assistant Professor of Psychology</div>
+  <p class="team-intro">
+    We are a team of faculty and undergraduate researchers at Middlebury College studying how people read and process language. Students in the lab design experiments, run eye-tracking sessions, analyze data, and present their work at national and international conferences.
+  </p>
+
+  <!-- Principal Investigator -->
+  <div class="pi-card reveal">
+    <div class="pi-photo">
+      <img src="images/Parshina.jpg" alt="Dr. Olga Parshina">
     </div>
-      <div class="team-avatar">
-        <img src="images/lab5.jpeg">      </div>
-      <h3>Research Assistants</h3>
-      <div class="interest"> Rene Laramee · Amna Mohammed · Aris Techasukij ·Genevieve Stone · Zhaniya Murat · Meghasha Dangal  </div>
+    <div>
+      <span class="pi-tag">Principal Investigator</span>
+      <h3>Dr. Olga Parshina</h3>
+      <div class="pi-title">Visiting Assistant Professor of Psychology &middot; Middlebury College</div>
+      <p class="pi-bio">
+        Olga received her PhD in Psychology from the Graduate Center, City University of New York. She was a postdoctoral fellow at the Center for Language and Brain at HSE University and taught at the University of Delaware before joining Middlebury in 2023. Her research uses eye-tracking to study reading in bilinguals, heritage speakers, and children. She serves on the editorial board of <em>Reading Research Quarterly</em>.
+      </p>
+      <div class="pi-links">
+        <a href="https://www.middlebury.edu/college/people/olga-parshina" target="_blank">Faculty Profile</a>
+        <a href="mailto:oparshina@middlebury.edu">Email</a>
+        <a href="#publications">Publications</a>
+      </div>
     </div>
   </div>
 
-  <div class="lab-photos reveal">
-    <div class="lab-photo">
-      <img src="images/lab1.jpg" alt="Lab1"> 
-      <div class="photo-caption">Lab meeting — the team at work</div>
+  <!-- Research Assistants -->
+  <h3 class="team-subhead">Research Assistants</h3>
+  <div class="ra-grid reveal">
+    <div class="ra-card">
+      <div class="ra-avatar">RL</div>
+      <div class="ra-name">Rene Laramee</div>
+      <div class="ra-role">Research Assistant</div>
     </div>
-    <div class="lab-photo">
-      <img src="images/lab2.jpg" alt="Lab2"> 
-      <div class="photo-caption"> Summer research symposium 2025 </div>
+    <div class="ra-card">
+      <div class="ra-avatar">AM</div>
+      <div class="ra-name">Amna Mohammed</div>
+      <div class="ra-role">Research Assistant</div>
     </div>
-     <div class="lab-photo">
-      <img src="images/poster.jpeg" alt="poster"> 
-      <div class="photo-caption"> Getting ready to present the results! </div>
+    <div class="ra-card">
+      <div class="ra-avatar">AT</div>
+      <div class="ra-name">Aris Techasukij</div>
+      <div class="ra-role">Research Assistant</div>
     </div>
-     <div class="lab-photo">
-      <img src="images/lab3.jpg" alt="lab3"> 
-      <div class="photo-caption"> At the International Heritage Conference in Los Angeles </div>
+    <div class="ra-card">
+      <div class="ra-avatar">GS</div>
+      <div class="ra-name">Genevieve Stone</div>
+      <div class="ra-role">Research Assistant</div>
     </div>
-     <div class="lab-photo">
-      <img src="images/lab4.jpeg" alt="lab4"> 
-      <div class="photo-caption"> Spring26 Research Symposium </div>
-       </div>
-     <div class="lab-photo">
-      <img src="images/lab5.jpeg" alt="lab5"> 
-      <div class="photo-caption"> Spring26 Research Symposium </div>
+    <div class="ra-card">
+      <div class="ra-avatar">ZM</div>
+      <div class="ra-name">Zhaniya Murat</div>
+      <div class="ra-role">Research Assistant</div>
+    </div>
+    <div class="ra-card">
+      <div class="ra-avatar">MD</div>
+      <div class="ra-name">Meghasha Dangal</div>
+      <div class="ra-role">Research Assistant</div>
+      <span class="ra-badge">Senior Project</span>
+    </div>
   </div>
-     <div class="lab-photo">
-      <img src="images/lab6.jpeg" alt="lab6"> 
-      <div class="photo-caption"> Gaze validation in the lab </div>
-    </div>
-         <div class="lab-photo">
-      <img src="images/lab7.jpg" alt="lab6"> 
-      <div class="photo-caption"> Final lab meeting AY25-26 </div>
-    </div>
-</section>
+
+  <!-- Alumni -->
+  <h3 class="team-subhead">Lab Alumni</h3>
+  <div class="alumni-list">
+    <span>Daisy Bui</span>
+    <span>Rostyslav Yarovyk</span>
+    <span>Kate Vasquez</span>
+    <span>Nana Santos Almonte</span>
+    <span>Katrina Schwarz</span>
+    <span>Clara Bass</span>
+  </div>
+  <!-- Photo gallery -->
+  <h3 class="team-subhead">Lab Life</h3>
+  <div class="lab-gallery reveal">
+    <figure class="wide">
+      <img src="images/lab1.jpg" alt="Lab meeting">
+      <figcaption>Lab meeting &mdash; the team at work</figcaption>
+    </figure>
+    <figure class="tall">
+      <img src="images/poster.jpeg" alt="Preparing a poster">
+      <figcaption>Getting ready to present the results!</figcaption>
+    </figure>
+    <figure>
+      <img src="images/lab2.jpg" alt="Summer research symposium">
+      <figcaption>Summer Research Symposium 2025</figcaption>
+    </figure>
+    <figure>
+      <img src="images/lab3.jpg" alt="Heritage conference in Los Angeles">
+      <figcaption>International Heritage Conference, Los Angeles</figcaption>
+    </figure>
+    <figure class="tall">
+      <img src="images/SRAPresident.png" alt="Summer research assistants with President Ian Baucom at their poster" style="object-position: center 30%;">
+      <figcaption>Summer RAs with President Ian Baucom</figcaption>
+    </figure>
+    <figure>
+      <img src="images/lab4.jpeg" alt="Spring research symposium">
+      <figcaption>Spring 2026 Research Symposium</figcaption>
+    </figure>
+    <figure>
+      <img src="images/lab5.jpeg" alt="Spring research symposium">
+      <figcaption>Spring 2026 Research Symposium</figcaption>
+    </figure>
+    <figure class="wide">
+      <img src="images/lab6.jpeg" alt="Eye-tracker gaze validation">
+      <figcaption>Gaze validation in the lab</figcaption>
+    </figure>
+    <figure class="full">
+      <img src="images/lab7.jpg" alt="Final lab meeting">
+      <figcaption>Final lab meeting, AY 2025&ndash;26</figcaption>
+    </figure>
+  </div>
 
 <!-- PUBLICATIONS -->
 <section id="publications">
